@@ -51,42 +51,20 @@ function draw() {
   stone.display();
   link.display();
 	
-  detectollision(mango1, stoneObj);
-  detectollision(mango2, stoneObj);
-  detectollision(mango3, stoneObj);
-  detectollision(mango4, stoneObj);
-  detectollision(mango5, stoneObj);
-  detectollision(mango6, stoneObj);
-  detectollision(mango7, stoneObj);
-  detectollision(mango8, stoneObj);
 
 
 
 }
 
-function keyPressed(){
-  if(keyCode === 32){
-    Matter.Body.setPosition(stoneObj.body, {x:235,y:420});
-    slingShot.attach(stoneObj.body);
-  }
-}
+
 function mouseDragged(){
   Matter.Body.setPosition(stoneObj.body,{x:mouseX,y:mouseY});
 }
 function mouseReleased(){
   slingShot.fly();
 }
-function detectollision(Lmango, Lstone){
-  mangoBodyPosition = Lmango.body.position;
-  stoneBodyPosition = Lstone.body.position;
 
-  var distance = dist (stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
-      if(distance<=Lmango.r+Lstone.r){
-        Matter.Body.setStatic(Lmango.body, false);
-    }
-}
 
-}
 
 
 
